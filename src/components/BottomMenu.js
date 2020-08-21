@@ -16,7 +16,7 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
         >
           <View style={ styles.InsideBottomButton }>
             <View style={ styles.ImageNavigationIcon }>
-              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" height="35" width="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" height="30" width="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.activeBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <Path stroke="none" d="M0 0h24v24H0z"/>
                 <Polyline points="5 12 3 12 12 3 21 12 19 12" />
                 <Path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
@@ -33,7 +33,7 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
         >
         <View style={ styles.InsideBottomButton}>
           <View style={ styles.ImageNavigationIcon }>
-            <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7a7a7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.notActiveBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
               <Path stroke="none" d="M0 0h24v24H0z"/>
               <Polyline points="5 12 3 12 12 3 21 12 19 12" />
               <Path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
@@ -46,16 +46,16 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
     }
 
     {
-      activeLink === 'Trends'
+      activeLink === 'TrendsPage'
       ?
         <NBButton
           style={ styles.BottomNavigationButtons }
-          onPress={() => navigation.navigate('Trends')}
+          onPress={() => navigation.navigate('TrendsPage')}
           disabled
         >
           <View style={ styles.InsideBottomButton }>
             <View style={ styles.ImageNavigationIcon }>
-              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trending-up" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trending-up" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.activeBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <Path stroke="none" d="M0 0h24v24H0z"/>
                 <Polyline points="3 17 9 11 13 15 21 7" />
                 <Polyline points="14 7 21 7 21 14" />
@@ -67,11 +67,11 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
       :
         <NBButton
           style={ styles.BottomNavigationButtons }
-          onPress={() => navigation.navigate('Trends')}
+          onPress={() => navigation.navigate('TrendsPage')}
         >
           <View style={ styles.InsideBottomButton }>
             <View style={ styles.ImageNavigationIcon }>
-              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trending-up" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7a7a7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trending-up" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.notActiveBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <Path stroke="none" d="M0 0h24v24H0z"/>
                 <Polyline points="3 17 9 11 13 15 21 7" />
                 <Polyline points="14 7 21 7 21 14" />
@@ -83,15 +83,15 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
     }
 
     {
-      activeLink === 'Clicker' ?
+      activeLink === 'ClickerPage' ?
         <NBButton
           style={ styles.BottomNavigationButtons }
-          onPress={() => navigation.navigate('Clicker')}
+          onPress={() => navigation.navigate('ClickerPage')}
           disabled
         >
           <View style={ styles.InsideBottomButton }>
             <View style={ styles.ImageNavigationIcon }>
-              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.activeBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <Path stroke="none" d="M0 0h24v24H0z"/>
                 <Path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
                 <Path d="M9 17v1a3 3 0 0 0 6 0v-1" />
@@ -103,11 +103,11 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
       :
         <NBButton
           style={ styles.BottomNavigationButtons }
-          onPress={() => navigation.navigate('Clicker')}
+          onPress={() => navigation.navigate('ClickerPage')}
         >
           <View style={ styles.InsideBottomButton }>
             <View style={ styles.ImageNavigationIcon }>
-              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7a7a7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.notActiveBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <Path stroke="none" d="M0 0h24v24H0z"/>
                 <Path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
                 <Path d="M9 17v1a3 3 0 0 0 6 0v-1" />
@@ -119,15 +119,15 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
     }
 
     {
-      activeLink === 'More' ?
+      activeLink === 'MoreSettingsPage' ?
         <NBButton
           style={ styles.BottomNavigationButtons }
-          onPress={() => navigation.navigate('More')}
+          onPress={() => navigation.navigate('MoreSettingsPage')}
           disabled
         >
           <View style={ styles.InsideBottomButton }>
             <View style={ styles.ImageNavigationIcon }>
-              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.activeBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <Path stroke="none" d="M0 0h24v24H0z"/>
                 <Circle cx="5" cy="12" r="1" />
                 <Circle cx="12" cy="12" r="1" />
@@ -140,11 +140,11 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
       :
         <NBButton
           style={ styles.BottomNavigationButtons }
-          onPress={() => navigation.navigate('More')}
+          onPress={() => navigation.navigate('MoreSettingsPage')}
         >
           <View style={ styles.InsideBottomButton }>
             <View style={ styles.ImageNavigationIcon }>
-              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7a7a7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dots" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.notActiveBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <Path stroke="none" d="M0 0h24v24H0z"/>
                 <Circle cx="5" cy="12" r="1" />
                 <Circle cx="12" cy="12" r="1" />
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom:0,
     width: '100%',
-    height: '10%',
+    height: '8%',
     backgroundColor: theme.colors.primary,
   },
   BottomNavigationButtons: {
@@ -200,6 +200,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
+    color: theme.colors.activeBottomTabColor,
   },
   NotActiveImageNavigationIconText: {
     paddingTop: 8,
@@ -207,7 +208,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#7a7a7a',
+    color: theme.colors.notActiveBottomTabColor,
   }
 });
 

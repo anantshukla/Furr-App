@@ -8,19 +8,18 @@ import Button from '../components/Button';
 import BottomMenu from '../components/BottomMenu';
 import { theme } from '../core/theme';
 
-const Dashboard = ({ navigation }) => (
-    <View style style={theme.BoundingBox}>
-      <Background>
-        <Header>3 Circles</Header>
-      </Background>
-      <BottomMenu navigation={navigation} activeLink='Dashboard'>Bottom Menu</BottomMenu>
-    </View>
+const MoreSettingsPage = ({ navigation }) => (
+  <View style style={theme.BoundingBox}>
+    <Background>
+      <Header>MoreSettingsPage</Header>
+
+      <Paragraph>
+        MoreSettingsPage
+      </Paragraph>
+
+    </Background>
+    <BottomMenu navigation={navigation} activeLink='MoreSettingsPage'>Bottom Menu</BottomMenu>
+  </View>
 );
 
-const styles = StyleSheet.create({
-  skbsdj: {
-    flex: 1,
-  },
-});
-
-export default memo(Dashboard);
+export default memo(MoreSettingsPage);
