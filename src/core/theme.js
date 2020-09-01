@@ -14,4 +14,12 @@ export const theme = {
   BoundingBox: {
     flex: 1,
   },
+  HeaderStyle: {
+    alignItems: 'center',
+  },
+  ContentStyle: {
+    paddingTop: 5,
+    flex: 1,
+    alignSelf: 'stretch',
+  },
 };

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useEffect, useState, Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Background from '../components/BackgroundMainApp';
 import Logo from '../components/Logo';
@@ -7,41 +7,55 @@ import Paragraph from '../components/Paragraph';
 import Button from '../components/Button';
 import BottomMenu from '../components/BottomMenu';
 import { theme } from '../core/theme';
-import Slider from '@react-native-community/slider';
+import { Audio } from 'expo-av';
 
+class ClickerPage extends Component {
+  async componentDidMount() {
+    Audio.setAudioModeAsync({
+      allowsRecordingIOS: false,
+      shouldDuckAndroid: false,
+      staysActiveInBackground:true,
+      playsThroughEarpieceAndroid: false
+    });
+    this.sound = new Audio.Sound();
 
-const RingClicker = () => {
-  console.log("hi")
-}
+    const status = {
+      shouldPlay: false
+    };
+    this.sound.loadAsync(require('../assets/clicker.mp3'), status, false);
+  }
 
-const ClickerPage = ({ navigation }) => {
+  RingClicker() {
+    try{
+      this.sound.playAsync();
+      this.sound.setPositionAsync(0)
+      console.log("click")
+    }
+    catch(error) {
+      console.log("Error: ", error)
+      //await sound.unloadAsync();
+    }
+  }
 
-  return(
-    <View style style={theme.BoundingBox}>
-      <Background>
-        <Header>ClickerPage</Header>
+  render() {
+    return(
+      <View style style={theme.BoundingBox}>
+        <Background>
+          <Header>ClickerPage</Header>
 
-        <Paragraph>
-          Click Clack
-        </Paragraph>
+          <Paragraph>
+            Click Clack
+          </Paragraph>
 
-        <Button mode="outlined" onPress={() => RingClicker()}>
-          Click
-        </Button>
+          <Button mode="outlined" onPress={this.RingClicker.bind(this)} >
+            Click
+          </Button>
 
-        <Paragraph>
-          Slider
-        </Paragraph>
-
-        <Slider
-          //value={volume}
-          //onValueChange={sliderChange}
-        />
-
-      </Background>
-      <BottomMenu navigation={navigation} activeLink='ClickerPage'>Bottom Menu</BottomMenu>
-    </View>
-  )
+        </Background>
+        <BottomMenu navigation={this.props.navigation} activeLink='ClickerPage'>Bottom Menu</BottomMenu>
+      </View>
+    )
+  }
 };
 
 export default memo(ClickerPage);
