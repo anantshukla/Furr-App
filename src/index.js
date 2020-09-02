@@ -12,6 +12,13 @@ import {
   MoreSettingsPage,
 } from './screens';
 
+import {
+  AccountSettingsPage,
+  AppSettingsPage,
+  AboutUsPage,
+  FeedbackPage,
+} from './screens/SettingsPages';
+
 const Router = createStackNavigator(
   {
     HomeScreen,
@@ -22,9 +29,13 @@ const Router = createStackNavigator(
     TrendsPage,
     ClickerPage,
     MoreSettingsPage,
+    AccountSettingsPage,
+    AppSettingsPage,
+    AboutUsPage,
+    FeedbackPage,
   },
   {
-    initialRouteName: 'Dashboard',
+    initialRouteName: 'TrendsPage',
     headerMode: 'none',
   }
 );

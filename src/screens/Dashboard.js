@@ -9,7 +9,7 @@ import BottomMenu from '../components/BottomMenu';
 import { theme } from '../core/theme';
 
 const Dashboard = ({ navigation }) => (
-    <View style style={theme.BoundingBox}>
+    <View style={theme.BoundingBox}>
       <Background>
         <Header>3 Circles</Header>
       </Background>

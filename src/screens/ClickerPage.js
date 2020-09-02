@@ -13,9 +13,12 @@ class ClickerPage extends Component {
   async componentDidMount() {
     Audio.setAudioModeAsync({
       allowsRecordingIOS: false,
+      playsInSilentModeIOS: true,
+      interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+      interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
       shouldDuckAndroid: false,
       staysActiveInBackground:true,
-      playsThroughEarpieceAndroid: false
+      playsThroughEarpieceAndroid: false,
     });
     this.sound = new Audio.Sound();
 
@@ -39,7 +42,7 @@ class ClickerPage extends Component {
 
   render() {
     return(
-      <View style style={theme.BoundingBox}>
+      <View style={theme.BoundingBox}>
         <Background>
           <Header>ClickerPage</Header>
 
