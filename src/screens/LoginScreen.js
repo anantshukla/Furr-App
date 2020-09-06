@@ -13,6 +13,8 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
 
+
+  //Simple Login from db
   const _onLoginPressed = () => {
     const emailError = emailValidator(email.value);
     const passwordError = passwordValidator(password.value);
@@ -25,6 +27,12 @@ const LoginScreen = ({ navigation }) => {
 
     navigation.navigate('Dashboard');
   };
+
+  //Social Login
+  const _onGoogleLoginPressed = () => {
+    
+    navigation.navigate('Dashboard');
+  }
 
   return (
     <Background>
@@ -67,6 +75,10 @@ const LoginScreen = ({ navigation }) => {
 
       <Button mode="contained" onPress={_onLoginPressed}>
         Login
+      </Button>
+
+      <Button mode="outlined" onPress={_onGoogleLoginPressed}>
+        Sign in using Google
       </Button>
 
       <View style={styles.row}>

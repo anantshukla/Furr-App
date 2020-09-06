@@ -33,6 +33,11 @@ const RegisterScreen = ({ navigation }) => {
     navigation.navigate('Dashboard');
   };
 
+  const _onGoogleSignUpPressed = () => {
+
+    navigation.navigate('Dashboard');
+  };
+
   return (
     <Background>
       <BackButton goBack={() => navigation.navigate('HomeScreen')} />
@@ -83,6 +88,12 @@ const RegisterScreen = ({ navigation }) => {
           <Text style={styles.link}>Login</Text>
         </TouchableOpacity>
       </View>
+
+      <Text style={styles.label2}>or</Text>
+      <Button mode="bordered" onPress={_onGoogleSignUpPressed} style={styles.button}>
+        Sign up using Google
+      </Button>
+
     </Background>
   );
 };
@@ -90,6 +101,11 @@ const RegisterScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   label: {
     color: theme.colors.secondary,
+  },
+  label2: {
+    color: theme.colors.secondary,
+    marginTop: 20,
+    top: 20,
   },
   button: {
     marginTop: 24,

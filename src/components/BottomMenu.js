@@ -46,11 +46,11 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
     }
 
     {
-      activeLink === 'TrendsPage'
+      activeLink === 'YourFitnessActivity'
       ?
         <NBButton
           style={ styles.BottomNavigationButtons }
-          onPress={() => navigation.navigate('TrendsPage')}
+          onPress={() => navigation.navigate('YourFitnessActivity')}
           disabled
         >
           <View style={ styles.InsideBottomButton }>
@@ -61,13 +61,13 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
                 <Polyline points="14 7 21 7 21 14" />
               </Svg>
             </View>
-            <NBText style={styles.ActiveImageNavigationIconText}>Trends</NBText>
+            <NBText style={styles.ActiveImageNavigationIconText}>Activity</NBText>
           </View>
         </NBButton>
       :
         <NBButton
           style={ styles.BottomNavigationButtons }
-          onPress={() => navigation.navigate('TrendsPage')}
+          onPress={() => navigation.navigate('YourFitnessActivity')}
         >
           <View style={ styles.InsideBottomButton }>
             <View style={ styles.ImageNavigationIcon }>
@@ -77,7 +77,7 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
                 <Polyline points="14 7 21 7 21 14" />
               </Svg>
             </View>
-            <NBText style={styles.NotActiveImageNavigationIconText}>Trends</NBText>
+            <NBText style={styles.NotActiveImageNavigationIconText}>Activity</NBText>
           </View>
         </NBButton>
     }

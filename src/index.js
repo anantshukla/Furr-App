@@ -1,5 +1,5 @@
 import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createSwitchNavigator, createStackNavigator } from 'react-navigation-stack';
 
 import {
   HomeScreen,
@@ -7,9 +7,10 @@ import {
   RegisterScreen,
   ForgotPasswordScreen,
   Dashboard,
-  TrendsPage,
+  YourFitnessActivity,
   ClickerPage,
   MoreSettingsPage,
+  PetSelectionScreen
 } from './screens';
 
 import {
@@ -26,16 +27,17 @@ const Router = createStackNavigator(
     RegisterScreen,
     ForgotPasswordScreen,
     Dashboard,
-    TrendsPage,
+    YourFitnessActivity,
     ClickerPage,
     MoreSettingsPage,
+    PetSelectionScreen, //Need to change to sidebar later
     AccountSettingsPage,
     AppSettingsPage,
     AboutUsPage,
     FeedbackPage,
   },
   {
-    initialRouteName: 'TrendsPage',
+    initialRouteName: 'Dashboard',
     headerMode: 'none',
   }
 );
