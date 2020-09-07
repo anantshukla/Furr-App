@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import { TouchableOpacity, View, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { TouchableOpacity, View, StyleSheet, ScrollView, Dimensions, Image } from 'react-native';
 import { Button as NBButton, Text as NBText } from 'native-base';
 import Background from '../components/BackgroundMainApp';
 import Logo from '../components/Logo';
@@ -22,6 +22,10 @@ const YourFitnessActivity = ({ navigation }) => {
   return (
     <View style={theme.BoundingBox}>
       <Background>
+        <TouchableOpacity style={{position: 'absolute', left:20, marginTop:32}} onPress={() => navigation.navigate('PetSelectionScreen')}>
+          <Image source={require('./../assets/HamburgerMenuButton.png')}/>
+        </TouchableOpacity>
+
         <Header>Your Fitness Activity</Header>
 
         <View style={styles.firstSelectorSection}>
@@ -46,7 +50,9 @@ const YourFitnessActivity = ({ navigation }) => {
 
         <View style={styles.secondSelectorSection}>
           <ScrollView
-          horizontal={true}>
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          >
             <TouchableOpacity onPress={() => setSecondSelector('JAN')} >
               <View style={styles.secondSectionIndividualMonthBox}>
                 <NBText>
@@ -228,7 +234,6 @@ const styles = StyleSheet.create({
   firstSelectorSection: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
     justifyContent: 'space-around',
     width: '100%',
     height: '8%',

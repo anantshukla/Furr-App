@@ -24,7 +24,7 @@ const Dashboard = ({ navigation }) => {
     <View style={theme.BoundingBox}>
       <Background>
         <TouchableOpacity style={{position: 'absolute', left:20, marginTop:32}} onPress={() => navigation.navigate('PetSelectionScreen')}>
-          <Image source={require('./../assets/blackmenu.png')}/>
+          <Image source={require('./../assets/HamburgerMenuButton.png')}/>
         </TouchableOpacity>
 
         <Header>3 Circles</Header>
