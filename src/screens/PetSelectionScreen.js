@@ -38,6 +38,8 @@ const DATA = [
 
 
 const PetSelectionScreen = ({ navigation }) => {
+
+  //Render all Pet Profiles
   const renderItem = ({ item }) =>
   {
     return(
@@ -54,10 +56,10 @@ const PetSelectionScreen = ({ navigation }) => {
             <Text style={styles.rightArrow}> > </Text>
 
             <View style={styles.updateDeleteButton}>
-              <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+              <TouchableOpacity onPress={() => navigation.navigate('UpdatePetScreen')}>
                 <Text style={styles.individualUpdateDeleteButton}>UPDATE</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+              <TouchableOpacity onPress={() => navigation.navigate('DeletePetScreen')}>
                 <Text style={styles.individualUpdateDeleteButton}>DELETE</Text>
               </TouchableOpacity>
             </View>
@@ -69,6 +71,7 @@ const PetSelectionScreen = ({ navigation }) => {
     );
   }
 
+  //Main Render Function
   return(
     <Background>
       <BackButton style={styles.backButton} goBack={() => navigation.navigate('Dashboard')} />
@@ -82,6 +85,15 @@ const PetSelectionScreen = ({ navigation }) => {
           keyExtractor={item => item.petId}
         />
       </View>
+
+      <View style={styles.buttomMenu}>
+        <TouchableOpacity onPress={() => navigation.navigate('AddPetScreen')}>
+          <Text>
+            Add Button
+          </Text>
+        </TouchableOpacity>
+      </View>
+
     </Background>
   )
 }
@@ -126,6 +138,18 @@ const styles = StyleSheet.create({
   },
   individualUpdateDeleteButton: {
     marginLeft: 10,
-  }
+  },
+  buttomMenu: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    justifyContent: 'space-around',
+    position: 'absolute',
+    bottom:0,
+    width: '100%',
+    height: '8%',
+    left: '50%',
+  },
 });
 export default memo(PetSelectionScreen);

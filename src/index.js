@@ -20,6 +20,12 @@ import {
   FeedbackPage,
 } from './screens/SettingsPages';
 
+import {
+  UpdatePetScreen,
+  DeletePetScreen,
+  AddPetScreen,
+} from './screens/PetSelectorSubScreens';
+
 const Router = createStackNavigator(
   {
     HomeScreen,
@@ -35,6 +41,9 @@ const Router = createStackNavigator(
     AppSettingsPage,
     AboutUsPage,
     FeedbackPage,
+    UpdatePetScreen,
+    DeletePetScreen,
+    AddPetScreen,
   },
   {
     initialRouteName: 'Dashboard',

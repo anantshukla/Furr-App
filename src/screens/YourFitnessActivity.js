@@ -5,9 +5,13 @@ import Background from '../components/BackgroundMainApp';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
 import Paragraph from '../components/Paragraph';
-import Button from '../components/Button';
 import BottomMenu from '../components/BottomMenu';
 import { theme } from '../core/theme';
+import DaySelector from './YourFitnessActivityComponents/DaySelector';
+import WeekSelector from './YourFitnessActivityComponents/WeekSelector';
+import MonthSelector from './YourFitnessActivityComponents/MonthSelector';
+
+//package
 import {
   LineChart,
 } from 'react-native-chart-kit';
@@ -16,8 +20,36 @@ const screenWidth = Dimensions.get("window").width;
 
 const YourFitnessActivity = ({ navigation }) => {
   const [firstSelector, setFirstSelector] = useState('Day');
-  const [secondSelector, setSecondSelector] = useState('JAN');
+  const [secondSelectorDay, setSecondSelectorDay] = useState('TODAY');
+  const [secondSelectorWeek, setSecondSelectorWeek] = useState('JAN');
+  const [secondSelectorMonth, setSecondSelectorMonth] = useState('JAN');
   const [thirdSelector, setThirdSelector] = useState('Time');
+
+  const renderSecondSection = () => {
+    //console.log(firstSelector);
+
+    if(firstSelector ==='Day') {
+      return(
+        <DaySelector />
+      )
+    }
+
+    else if(firstSelector === 'Week') {
+      return (
+        <WeekSelector />
+      )
+    }
+
+    else if(firstSelector ==='Month') {
+      return(
+        <MonthSelector />
+      )
+    }
+
+    else {
+      console.log("err at fitness activity, renderSecondSection")
+    }
+  }
 
   return (
     <View style={theme.BoundingBox}>
@@ -48,109 +80,9 @@ const YourFitnessActivity = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.secondSelectorSection}>
-          <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-          >
-            <TouchableOpacity onPress={() => setSecondSelector('JAN')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  JAN
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('FEB')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  FEB
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('MAR')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  MAR
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('APR')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  APR
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('MAY')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  MAY
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('JUN')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  JUN
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('JUL')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  JUL
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('AUG')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  AUG
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('SEP')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  SEP
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('OCT')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  OCT
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('NOV')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  NOV
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => setSecondSelector('DEC')} >
-              <View style={styles.secondSectionIndividualMonthBox}>
-                <NBText>
-                  DEC
-                </NBText>
-              </View>
-            </TouchableOpacity>
-
-          </ScrollView>
-        </View>
+        {
+          renderSecondSection()
+        }
 
         <View style={styles.thirdSelectorSection}>
           <TouchableOpacity style={styles.thirdSectionIndividualBox} onPress={() => setThirdSelector('Time')} >
