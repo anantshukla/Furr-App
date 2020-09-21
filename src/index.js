@@ -46,7 +46,7 @@ const Router = createStackNavigator(
     AddPetScreen,
   },
   {
-    initialRouteName: 'Dashboard',
+    initialRouteName: 'PetSelectionScreen',
     headerMode: 'none',
   }
 );

@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
-import { TouchableOpacity, View, StyleSheet, Text, Image, FlatList } from 'react-native';
-
+import { TouchableOpacity, View, StyleSheet, Text, Image, FlatList, ScrollView, Dimensions } from 'react-native';
 import Background from '../components/BackgroundMainApp';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
@@ -33,6 +32,26 @@ const DATA = [
     petName: 'Doggo4',
     petImage: 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg'
   },
+  {
+    petId: '5',
+    petName: 'Doggo5',
+    petImage: 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg'
+  },
+  {
+    petId: '6',
+    petName: 'Doggo6',
+    petImage: 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg'
+  },
+  {
+    petId: '7',
+    petName: 'Doggo7',
+    petImage: 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg'
+  },
+  {
+    petId: '8',
+    petName: 'Doggo8',
+    petImage: 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg'
+  },
 ];
 
 
@@ -63,7 +82,6 @@ const PetSelectionScreen = ({ navigation }) => {
                 <Text style={styles.individualUpdateDeleteButton}>DELETE</Text>
               </TouchableOpacity>
             </View>
-
           </View>
 
         </View>
@@ -74,46 +92,51 @@ const PetSelectionScreen = ({ navigation }) => {
   //Main Render Function
   return(
     <Background>
-      <BackButton style={styles.backButton} goBack={() => navigation.navigate('Dashboard')} />
-
+      <BackButton goBack={() => navigation.navigate('Dashboard')} />
       <Header>Select a Pet Profile</Header>
+      <ScrollView
+        style={styles.scrollViewStyle}
+        showsVerticalScrollIndicator={false}>
 
-      <View style={styles.item} behavior="padding">
-        <FlatList
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={item => item.petId}
-        />
-      </View>
-
+        <View style={styles.item} behavior="padding">
+          <FlatList
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={item => item.petId}
+          />
+        </View>
+      </ScrollView>
       <View style={styles.buttomMenu}>
         <TouchableOpacity onPress={() => navigation.navigate('AddPetScreen')}>
-          <Text>
-            Add Button
-          </Text>
+          <Image source={require('./../assets/plus-add-icon.png')}/>
         </TouchableOpacity>
       </View>
-
     </Background>
   )
 }
 
 const styles = StyleSheet.create({
+  scrollViewStyle: {
+    //width: '100%',
+    //display: 'flex',
+    //flex: 1,
+  },
   item: {
     //backgroundColor: '#f9c2ff',
     paddingTop: 7,
     marginVertical: 4,
-    marginHorizontal: 5,
+    //marginHorizontal: 5,
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
+    width: '100%',
   },
   petPicture: {
     marginRight: '6%',
     paddingTop: 4,
     width: 90,
     height: 90,
-    borderRadius: 48,
+    borderRadius: 45,
   },
   title: {
     fontSize: 25,
@@ -146,10 +169,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     justifyContent: 'space-around',
     position: 'absolute',
-    bottom:0,
+    bottom: 15,
     width: '100%',
-    height: '8%',
-    left: '50%',
+    height: '15%',
+    left: '45%',
   },
 });
 export default memo(PetSelectionScreen);

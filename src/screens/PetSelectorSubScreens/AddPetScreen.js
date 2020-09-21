@@ -7,10 +7,12 @@ import Paragraph from '../../components/Paragraph';
 import Button from '../../components/Button';
 import BottomMenu from '../../components/BottomMenu';
 import { theme } from '../../core/theme';
+import BackButton from '../../components/BackButtonMainApp';
 
 const FeedbackPage = ({ navigation }) => (
   <View style={theme.BoundingBox}>
     <Background>
+      <BackButton goBack={() => navigation.navigate('PetSelectionScreen')} />
       <Header>Add Pet Screen</Header>
 
       <Paragraph>

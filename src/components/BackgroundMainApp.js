@@ -20,16 +20,18 @@ const Background = ({ children }) => (
 
 const styles = StyleSheet.create({
   background: {
+    display: 'flex',
     flex: 1,
-    width: '100%',
+    //width: '100%',
     backgroundColor: theme.colors.surface,
   },
   container: {
-    flex: 1,
+    //flex: 1,
     padding: 20,
     width: '100%',
     alignSelf: 'center',
     alignItems: 'center',
+    marginBottom: 60,
   },
 });
 

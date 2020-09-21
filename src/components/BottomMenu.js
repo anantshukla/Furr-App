@@ -6,7 +6,6 @@ import Svg, { Polyline, Path, Circle } from 'react-native-svg';
 
 const BottomMenu = ({ children, activeLink, navigation }) => (
   <View style={styles.ButtomMenu}>
-
     {
       activeLink === 'Dashboard' ?
         <NBButton
