@@ -14,7 +14,7 @@ import {
 } from './screens';
 
 import {
-  AccountSettingsPage,
+  ChangePasswordScreen,
   AppSettingsPage,
   AboutUsPage,
   FeedbackPage,
@@ -37,7 +37,7 @@ const Router = createStackNavigator(
     ClickerPage,
     MoreSettingsPage,
     PetSelectionScreen, //Need to change to sidebar later
-    AccountSettingsPage,
+    ChangePasswordScreen,
     AppSettingsPage,
     AboutUsPage,
     FeedbackPage,
@@ -46,7 +46,7 @@ const Router = createStackNavigator(
     AddPetScreen,
   },
   {
-    initialRouteName: 'PetSelectionScreen',
+    initialRouteName: 'HomeScreen',
     headerMode: 'none',
   }
 );

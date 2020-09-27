@@ -11,13 +11,13 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 const DATA = [
   {
-    //icon:
     id: '1',
     icon: 'account-circle',
     iconTagLibrary: 'MaterialIcons',
-    page: 'AccountSettingsPage',
-    title: 'Account Settings',
+    page: 'ChangePasswordScreen',
+    title: 'Change Password',
   },
+  /*
   {
     id: '2',
     icon: 'account-circle',
@@ -25,6 +25,7 @@ const DATA = [
     page: 'AppSettingsPage',
     title: 'App Settings',
   },
+  */
   {
     id: '3',
     icon: 'account-circle',
@@ -45,7 +46,6 @@ const MoreSettingsPage = ({ navigation }) => {
   const renderItem = ({ item }) =>
   {
     let IconTagLibrary = item.iconTagLibrary;
-    //console.log(IconTagLibrary)
     return(
       <TouchableOpacity onPress={() => navigation.navigate(`${item.page}`)}>
         <View style={styles.item}>

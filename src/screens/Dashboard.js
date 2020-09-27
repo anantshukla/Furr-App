@@ -52,10 +52,13 @@ const Dashboard = ({ navigation }) => {
             },
           }}
         />
-        <Header>3 Circles</Header>
+        <Header>Calendar</Header>
         <Paragraph>
-          Aasasasasas
+          Place Calendar here
         </Paragraph>
+        <Header>Add Activity</Header>
+        <Header>Set Target</Header>
+        <Header>Update Weight</Header>
 
       </Background>
       <BottomMenu navigation={navigation} activeLink='Dashboard'>Bottom Menu</BottomMenu>

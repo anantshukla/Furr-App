@@ -164,17 +164,19 @@ const YourFitnessActivity = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   firstSelectorSection: {
+    //flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
     width: '100%',
-    height: '8%',
+    height: '15%',
     //backgroundColor: theme.colors.primary,
   },
   firstSectionIndividualBox: {
     width: '33%',
   },
   secondSelectorSection: {
+    flex: 1,
     backgroundColor: '#BE90D4',
     flexDirection: 'row',
     paddingLeft: 5,
@@ -195,6 +197,7 @@ const styles = StyleSheet.create({
     marginRight: 5
   },
   thirdSelectorSection: {
+    flex: 1,
     paddingTop: 30,
     flexDirection: 'row',
     alignItems: 'center',

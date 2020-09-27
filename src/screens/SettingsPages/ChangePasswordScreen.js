@@ -10,53 +10,58 @@ import BackButton from '../../components/BackButtonMainApp';
 import { theme } from '../../core/theme';
 import { TextInput as Input } from 'react-native-paper';
 
-const FeedbackPage = ({ navigation }) => {
-  const [feedbackField1, setFeedbackField1] = React.useState('');
-  const [feedbackField2, setFeedbackField2] = React.useState('');
-  const [feedbackField3, setFeedbackField3] = React.useState('');
+const ChangePasswordScreen = ({ navigation }) => {
+  const [oldPasswordField, setOldPasswordField] = React.useState('');
+  const [newPasswordField1, setNewPasswordField1] = React.useState('');
+  const [newPasswordField2, setNewPasswordField2] = React.useState('');
+
   return(
     <View style={theme.BoundingBox}>
       <Background>
         <BackButton goBack={() => navigation.navigate('MoreSettingsPage')} />
-        <Header>Feedback Page</Header>
+        <Header>Change Password</Header>
           <Paragraph>
-            Please provide us your feedback. We will try to work on it ASAP!
+            You cannot change your password if you've logged in using Social Sign in.
           </Paragraph>
           <ScrollView style={styles.scrollContiner}>
           <View style={styles.mainContiner}>
 
             <Input
-              label = "Any features that could be added to the app"
-              value = {feedbackField1}
+              label = "Old Password"
+              returnKeyType="next"
+              value = {oldPasswordField}
               mode = {'outlined'}
-              multiline = {true}
-              numberOfLines = {5}
-              onChangeText = {feedbackField1 => setFeedbackField1(feedbackField1)}
+              numberOfLines = {1}
+              onChangeText = {oldPasswordField => setOldPasswordField(oldPasswordField)}
               style = {styles.feedbackInput}
+              secureTextEntry
             />
 
             <Input
-              label = "Major bugs that you are facing"
-              value = {feedbackField1}
+              label = "New Password"
+              returnKeyType="next"
+              value = {newPasswordField1}
               mode = {'outlined'}
-              multiline = {true}
-              numberOfLines = {5}
-              onChangeText = {feedbackField1 => setFeedbackField1(feedbackField1)}
+              numberOfLines = {1}
+              onChangeText = {newPasswordField1 => setNewPasswordField1(newPasswordField1)}
               style = {styles.feedbackInput}
+              secureTextEntry
             />
 
             <Input
-              label = "Device Make and Model"
-              value = {feedbackField3}
+              label = "Repeat New Password"
+              returnKeyType="done"
+              value = {newPasswordField2}
               mode = {'outlined'}
-              multiline = {true}
-              numberOfLines = {2}
-              onChangeText = {feedbackField3 => setFeedbackField1(feedbackField3)}
+              numberOfLines = {1}
+              onChangeText = {newPasswordField2 => setNewPasswordField2(newPasswordField2)}
               style = {styles.feedbackInput}
+              secureTextEntry
             />
+
             <View style={styles.feedbackButtonPosition}>
               <Button style={styles.feedbackButtonStyle} mode="contained" onPress={() => navigation.navigate('Dashboard')}>
-                Send Feedback
+                Change Password
               </Button>
             </View>
           </View>
@@ -88,4 +93,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default memo(FeedbackPage);
+export default memo(ChangePasswordScreen);
