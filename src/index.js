@@ -7,11 +7,14 @@ import {
   RegisterScreen,
   ForgotPasswordScreen,
   Dashboard,
+  MainCalenderPage,
   YourFitnessActivity,
   ClickerPage,
   MoreSettingsPage,
   PetSelectionScreen
 } from './screens';
+
+import CreateTask from './screens/CalenderPages/screens/CreateTask';
 
 import {
   ChangePasswordScreen,
@@ -33,6 +36,8 @@ const Router = createStackNavigator(
     RegisterScreen,
     ForgotPasswordScreen,
     Dashboard,
+    MainCalenderPage,
+    CreateTask,
     YourFitnessActivity,
     ClickerPage,
     MoreSettingsPage,
@@ -46,7 +51,7 @@ const Router = createStackNavigator(
     AddPetScreen,
   },
   {
-    initialRouteName: 'HomeScreen',
+    initialRouteName: 'Dashboard',
     headerMode: 'none',
   }
 );

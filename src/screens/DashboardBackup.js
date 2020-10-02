@@ -3,6 +3,8 @@ import Background from '../components/BackgroundMainApp';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
 import Paragraph from '../components/Paragraph';
+import BottomMenu from '../components/BottomMenu';
+
 import Button from '../components/Button';
 
 const Dashboard = ({ navigation }) => (
@@ -16,6 +18,7 @@ const Dashboard = ({ navigation }) => (
     <Button mode="outlined" onPress={() => navigation.navigate('HomeScreen')}>
       Logout
     </Button>
+    <BottomMenu navigation={this.props.navigation} activeLink='MainCalenderPage'>Bottom Menu</BottomMenu>
   </Background>
 );
 

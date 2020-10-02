@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { theme } from '../core/theme';
 import { Button as NBButton, Text as NBText } from 'native-base';
-import Svg, { Polyline, Path, Circle } from 'react-native-svg';
+import Svg, { Polyline, Path, Circle, Line, Rect } from 'react-native-svg';
 
 const BottomMenu = ({ children, activeLink, navigation }) => (
   <View style={styles.ButtomMenu}>
@@ -40,6 +40,48 @@ const BottomMenu = ({ children, activeLink, navigation }) => (
             </Svg>
           </View>
           <NBText style={ styles.NotActiveImageNavigationIconText }>Home</NBText>
+        </View>
+      </NBButton>
+    }
+
+    {
+      activeLink === 'MainCalenderPage' ?
+        <NBButton
+          style={ styles.BottomNavigationButtons }
+          onPress={() => navigation.navigate('MainCalenderPage')}
+          disabled
+        >
+          <View style={ styles.InsideBottomButton }>
+            <View style={ styles.ImageNavigationIcon }>
+              <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.activeBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <Path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <Rect x="4" y="5" width="16" height="16" rx="2" />
+                <Line x1="16" y1="3" x2="16" y2="7" />
+                <Line x1="8" y1="3" x2="8" y2="7" />
+                <Line x1="4" y1="11" x2="20" y2="11" />
+                <Rect x="8" y="15" width="2" height="2" />
+              </Svg>
+            </View>
+            <NBText style={ styles.ActiveImageNavigationIconText }>Calender</NBText>
+          </View>
+        </NBButton>
+      :
+        <NBButton
+          style={ styles.BottomNavigationButtons }
+          onPress={() => navigation.navigate('MainCalenderPage')}
+        >
+        <View style={ styles.InsideBottomButton}>
+          <View style={ styles.ImageNavigationIcon }>
+            <Svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke={theme.colors.notActiveBottomTabColor} fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <Path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <Rect x="4" y="5" width="16" height="16" rx="2" />
+              <Line x1="16" y1="3" x2="16" y2="7" />
+              <Line x1="8" y1="3" x2="8" y2="7" />
+              <Line x1="4" y1="11" x2="20" y2="11" />
+              <Rect x="8" y="15" width="2" height="2" />
+            </Svg>
+          </View>
+          <NBText style={ styles.NotActiveImageNavigationIconText }>Calender</NBText>
         </View>
       </NBButton>
     }
